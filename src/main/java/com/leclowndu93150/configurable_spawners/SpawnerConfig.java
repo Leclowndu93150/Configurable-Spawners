@@ -1,9 +1,7 @@
 package com.leclowndu93150.configurable_spawners;
 
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@EventBusSubscriber(modid = SpawnerTweaks.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class SpawnerConfig {
     public static final ModConfigSpec.IntValue maxNearbyEntities;
     public static final ModConfigSpec.IntValue minSpawnDelay;

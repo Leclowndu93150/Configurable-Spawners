@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "com.leclowndu93150.configurable_spawners.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "configurable_spawners.refmap.json",
+  "refmap": "spawner_tweaks.refmap.json",
   "mixins": [
     "BaseSpawnerMixin"
   ],

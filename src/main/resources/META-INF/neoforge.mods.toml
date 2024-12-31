@@ -63,4 +63,4 @@ ordering = "NONE"
 side = "BOTH"
 
 [[mixins]]
-config = "mixins.${mod_id}.json"
+config = "${mod_id}.mixins.json"
