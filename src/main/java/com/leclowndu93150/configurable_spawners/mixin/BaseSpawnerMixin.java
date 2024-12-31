@@ -52,6 +52,7 @@ public class BaseSpawnerMixin {
         tag.putShort("SpawnRange", (short)this.spawnRange);
     }
 
+
     private void updateConfigValues() {
         this.minSpawnDelay = SpawnerConfig.minSpawnDelay.get();
         this.maxSpawnDelay = SpawnerConfig.maxSpawnDelay.get();
