@@ -1,21 +1,21 @@
 package com.leclowndu93150.configurable_spawners;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
-@Mod.EventBusSubscriber(modid = SpawnerTweaks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = SpawnerTweaks.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class SpawnerConfig {
-    public static final ForgeConfigSpec.IntValue maxNearbyEntities;
-    public static final ForgeConfigSpec.IntValue minSpawnDelay;
-    public static final ForgeConfigSpec.IntValue maxSpawnDelay;
-    public static final ForgeConfigSpec.IntValue requiredPlayerRange;
-    public static final ForgeConfigSpec.IntValue spawnCount;
-    public static final ForgeConfigSpec.IntValue spawnRange;
+    public static final ModConfigSpec.IntValue maxNearbyEntities;
+    public static final ModConfigSpec.IntValue minSpawnDelay;
+    public static final ModConfigSpec.IntValue maxSpawnDelay;
+    public static final ModConfigSpec.IntValue requiredPlayerRange;
+    public static final ModConfigSpec.IntValue spawnCount;
+    public static final ModConfigSpec.IntValue spawnRange;
 
-    public static final ForgeConfigSpec SPEC;
+    public static final ModConfigSpec SPEC;
 
     static {
-        ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
         maxNearbyEntities = builder
                 .comment("Maximum number of nearby entities")

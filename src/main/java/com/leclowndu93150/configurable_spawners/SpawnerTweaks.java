@@ -1,16 +1,16 @@
 package com.leclowndu93150.configurable_spawners;
 
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 
 @Mod(SpawnerTweaks.MODID)
 public class SpawnerTweaks {
 
     public static final String MODID = "spawner_tweaks";
 
-    public SpawnerTweaks() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SpawnerConfig.SPEC);
+    public SpawnerTweaks(ModContainer container) {
+        container.registerConfig(ModConfig.Type.COMMON, SpawnerConfig.SPEC);
     }
 
 }
