@@ -4,12 +4,12 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 
-@Mod(ConfigurableSpawners.MODID)
-public class ConfigurableSpawners {
+@Mod(SpawnerTweaks.MODID)
+public class SpawnerTweaks {
 
-    public static final String MODID = "configurable_spawners";
+    public static final String MODID = "spawner_tweaks";
 
-    public ConfigurableSpawners() {
+    public SpawnerTweaks() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SpawnerConfig.SPEC);
     }
 
