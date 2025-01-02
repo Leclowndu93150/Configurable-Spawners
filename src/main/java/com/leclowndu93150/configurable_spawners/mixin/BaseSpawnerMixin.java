@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ServerLevelAccessor;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -53,7 +54,27 @@ public class BaseSpawnerMixin {
     }
 
 
+    @Unique
     private void updateConfigValues() {
+        CompoundTag tag = ((BaseSpawner)(Object)this).save(new CompoundTag());
+
+        if (tag.getBoolean("ConfigurableSpawnerModified")) {
+            applyConfigSettings();
+        } else if (hasDefaultValues()) {
+            applyConfigSettings();
+            tag.putBoolean("ConfigurableSpawnerModified", true);
+        }
+    }
+
+    @Unique
+    private boolean hasDefaultValues() {
+        return this.minSpawnDelay == 200 && this.maxSpawnDelay == 800
+                && this.spawnCount == 4 && this.maxNearbyEntities == 6
+                && this.requiredPlayerRange == 16 && this.spawnRange == 4;
+    }
+
+    @Unique
+    private void applyConfigSettings() {
         this.minSpawnDelay = SpawnerConfig.minSpawnDelay.get();
         this.maxSpawnDelay = SpawnerConfig.maxSpawnDelay.get();
         this.spawnCount = SpawnerConfig.spawnCount.get();
